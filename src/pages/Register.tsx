@@ -191,7 +191,6 @@ export const Register = () => {
        onChange={(e) => setFormData({ ...formData, role: e.target.value })}
       >
        <option value="customer">Customer</option>
-       <option value="vendor">Vendor</option>
       </select>
 
       <button

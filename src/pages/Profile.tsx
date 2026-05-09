@@ -143,61 +143,31 @@ export const Profile = () => {
             onChange={(e) => setFormData({ ...formData, role: e.target.value as 'vendor' | 'customer' })}
            >
             <option value="customer">Customer</option>
-            <option value="vendor">Vendor</option>
            </select>
           </div>
          </div>
-
-         <div className="flex flex-col gap-4 pt-8">
-          {isEditing ? (
-           <div className="grid grid-cols-2 gap-4">
-            <button
-             onClick={() => setIsEditing(false)}
-             className="w-full bg-gray-100 text-gray-500 py-4 rounded-2xl font-black text-sm hover:bg-gray-200 transition-all"
-            >
-             Cancel
-            </button>
-            <button
-             disabled={isSaving}
-             onClick={handleSave}
-             className="w-full bg-[#1443C3] text-white py-4 rounded-2xl font-black text-sm shadow-xl shadow-[#1443C3]/30 hover:bg-blue-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-            >
-             <Save className="w-4 h-4" />
-             {isSaving ? 'Saving...' : 'Save Changes'}
-            </button>
-           </div>
-          ) : (
-           <button
-            onClick={() => setIsEditing(true)}
-            className="w-full bg-[#1443C3] text-white py-4 rounded-2xl font-black text-sm shadow-xl shadow-[#1443C3]/30 hover:bg-blue-700 transition-all"
-           >
-            Edit Profile Information
-           </button>
-          )}
-
-          <div className="grid grid-cols-2 gap-4">
-           <button
-            onClick={handleLogout}
-            className="w-full bg-white border-2 border-gray-100 text-gray-700 py-4 rounded-2xl font-black text-sm hover:border-gray-200 transition-all flex items-center justify-center gap-2"
-           >
-            <LogOut className="w-4 h-4" />
-            Logout
-           </button>
-           <button
-            onClick={() => setShowDeleteModal(true)}
-            className="w-full bg-red-50 text-red-600 py-4 rounded-2xl font-black text-sm hover:bg-red-100 transition-all flex items-center justify-center gap-2"
-           >
-            <Trash2 className="w-4 h-4" />
-            Delete Account
-           </button>
-          </div>
+         <div className="grid grid-cols-2 gap-4">
+          <button
+           onClick={handleLogout}
+           className="w-full bg-white border-2 border-gray-100 text-gray-700 py-4 rounded-2xl font-black text-sm hover:border-gray-200 transition-all flex items-center justify-center gap-2"
+          >
+           <LogOut className="w-4 h-4" />
+           Logout
+          </button>
+          <button
+           onClick={() => setShowDeleteModal(true)}
+           className="w-full bg-red-50 text-red-600 py-4 rounded-2xl font-black text-sm hover:bg-red-100 transition-all flex items-center justify-center gap-2"
+          >
+           <Trash2 className="w-4 h-4" />
+           Delete Account
+          </button>
          </div>
         </div>
        </div>
       </div>
      </div>
     </div>
-   </main>
+   </main >
 
    <AnimatePresence>
     {showDeleteModal && (
@@ -242,6 +212,6 @@ export const Profile = () => {
    </AnimatePresence>
 
    <Footer />
-  </div>
+  </div >
  );
 };

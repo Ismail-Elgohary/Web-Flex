@@ -7,7 +7,7 @@ import { useFavorites } from '../../context/FavoritesContext';
 import { useToast } from '../../context/ToastContext';
 import { products } from '../../lib/data';
 
-const EXPLORE_PRODUCTS = products.filter((product) => product.section === "explore").slice(0, 12);
+const EXPLORE_PRODUCTS = products.filter((product) => product.section === "explore").slice(0, 8);
 
 export const ExploreProducts = () => {
  const { isAuthenticated } = useAuth();
